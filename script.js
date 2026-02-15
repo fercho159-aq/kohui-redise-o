@@ -39,10 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.fade-in-left, .fade-in-right, .service-card, .portfolio-item');
+    const animatedElements = document.querySelectorAll('.scroll-animate');
 
     animatedElements.forEach((el) => {
-        el.classList.add('hidden-element'); // Add a class to hide initially
         observer.observe(el);
     });
     // About Us Carousel
