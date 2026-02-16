@@ -19,12 +19,17 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--dark-bg);
     color: var(--text-color);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 a {
@@ -124,21 +129,23 @@ h6 {
 }
 
 .section-title {
-    text-align: center;
+    text-align: left;
     font-size: 2.5rem;
     margin-bottom: 3rem;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    /* Changed from inline-block to take full width */
+    left: 0;
+    transform: none;
 }
 
 .section-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    /* Align to start */
+    transform: none;
     width: 60px;
     height: 3px;
     background-color: var(--secondary-color);
@@ -146,13 +153,14 @@ h6 {
 
 /* Header */
 #main-header {
-    background-color: rgba(13, 27, 42, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 20px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Lighter shadow for white bg */
 }
 
 #main-header .container {
@@ -162,10 +170,15 @@ h6 {
 }
 
 .logo a {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--light-text);
+    display: block;
+    width: 150px;
+    /* Adjust based on preference */
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    /* filter: brightness(0) invert(1); removed to fix solid block issue */
 }
 
 .nav-links {
@@ -178,6 +191,8 @@ h6 {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: var(--primary-color);
+    /* Brand blue */
 }
 
 .nav-links a:hover {
@@ -188,6 +203,8 @@ h6 {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--primary-color);
+    /* Brand blue */
 }
 
 /* Hero Section */
@@ -521,12 +538,20 @@ footer {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 100%;
+        /* Attach to bottom of header */
         left: 0;
         width: 100%;
-        background-color: var(--dark-bg);
+        background-color: rgba(255, 255, 255, 0.98);
         text-align: center;
         padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links a {
+        color: var(--primary-color);
+        margin: 10px 0;
+        display: block;
     }
 
     .nav-links.active {
@@ -535,14 +560,24 @@ footer {
 
     .hamburger {
         display: block;
-        color: #fff;
+        color: var(--primary-color);
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        /* Further reduced for mobile */
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        /* Reduced to prevent overflow/breaking */
+        padding: 0 10px;
+        /* Add padding to prevent edge touching */
+        width: 100%;
+        /* Ensure it doesn't overflow container */
     }
 
     .grid-2 {
         grid-template-columns: 1fr;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
     }
 }
