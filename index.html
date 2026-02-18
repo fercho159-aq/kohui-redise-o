@@ -27,11 +27,57 @@
             </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#portfolio">Proyectos</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+                    <li class="has-mega-menu">
+                        <a href="servicios.html">Servicios <i class="fas fa-chevron-down"
+                                style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                        <div class="mega-menu">
+                            <a href="servicios.html" class="mega-menu-item">
+                                <div class="mega-menu-image">
+                                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=400"
+                                        alt="Gerencia">
+                                </div>
+                                <div class="mega-menu-content">
+                                    <h4>Gerencia de Proyectos</h4>
+                                    <p>Coordinación integral desde la concepción hasta la entrega final.</p>
+                                </div>
+                            </a>
+                            <a href="servicios.html" class="mega-menu-item">
+                                <div class="mega-menu-image">
+                                    <img src="https://images.unsplash.com/photo-1590487988256-9ed24133863e?q=80&w=400"
+                                        alt="Ingeniería">
+                                </div>
+                                <div class="mega-menu-content">
+                                    <h4>Ingeniería y Construcción</h4>
+                                    <p>Soluciones técnicas avanzadas y ejecución profesional de obra civil.</p>
+                                </div>
+                            </a>
+                            <a href="servicios.html" class="mega-menu-item">
+                                <div class="mega-menu-image">
+                                    <img src="https://images.unsplash.com/photo-1503387762-592dee58c460?q=80&w=400"
+                                        alt="Mantenimiento">
+                                </div>
+                                <div class="mega-menu-content">
+                                    <h4>Mantenimiento Industrial</h4>
+                                    <p>Programas preventivos y correctivos para plantas y almacenes.</p>
+                                </div>
+                            </a>
+                            <a href="servicios.html" class="mega-menu-item">
+                                <div class="mega-menu-image">
+                                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=400"
+                                        alt="Sistemas">
+                                </div>
+                                <div class="mega-menu-content">
+                                    <h4>Sistemas Especiales (CCTV)</h4>
+                                    <p>Infraestructura tecnológica avanzada de seguridad y vigilancia.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="#">Bolsa de Trabajo</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -47,7 +93,7 @@
             <h1 class="fade-in-up">La calidad es nuestra mejor <span class="highlight">GARANTÍA</span>, el precio una
                 <span class="highlight">MOTIVACIÓN</span> y KOHUI una <span class="highlight">Realidad</span>
             </h1>
-            <a href="#contact" class="btn btn-primary fade-in-up delay-1">Contáctanos</a>
+            <a href="contacto.html" class="btn btn-primary fade-in-up delay-1">Contáctanos</a>
         </div>
     </section>
 
@@ -171,7 +217,7 @@
             <h2>¿Listo para iniciar tu proyecto?</h2>
             <p>En Kohui nos preocupamos por nuestros clientes y ayudamos a llevar tu proyecto ideal a la realidad.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/525589263600" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i>
+                <a href="https://wa.me/50768306207" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i>
                     WhatsApp</a>
                 <a href="mailto:contacto@kohui.com.mx" class="btn btn-primary"><i class="fas fa-envelope"></i>
                     Correo</a>
@@ -222,10 +268,12 @@
                 <div class="footer-links">
                     <h4>Enlaces</h4>
                     <ul>
-                        <li><a href="#hero">Inicio</a></li>
-                        <li><a href="#services">Servicios</a></li>
-                        <li><a href="#portfolio">Proyectos</a></li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="acerca-de-nosotros.html">Acerca de Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="proyectos.html">Proyectos</a></li>
+                        <li><a href="#">Bolsa de Trabajo</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-social">
@@ -240,6 +288,33 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div id="whatsapp-widget">
+        <button id="whatsapp-btn" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </button>
+        <div id="whatsapp-modal" class="hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Contáctanos</h3>
+                <form id="whatsapp-form">
+                    <input type="text" id="wa-nombre" placeholder="Nombre" required>
+                    <input type="text" id="wa-apellido" placeholder="Apellido" required>
+                    <select id="wa-obra" required>
+                        <option value="" disabled selected>Tipo de obra</option>
+                        <option value="Habitacional">Habitacional</option>
+                        <option value="Comercial">Comercial</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Hotelera">Hotelera</option>
+                        <option value="Oficinas">Oficinas</option>
+                        <option value="Usos mixtos">Usos mixtos</option>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
